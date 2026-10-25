@@ -1,0 +1,29 @@
+/* Trust Hardware - Receipt print stylesheet
+   Hides the entire app UI and prints only the receipt content. */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #receipt-content,
+  #receipt-content * {
+    visibility: visible;
+  }
+
+  #receipt-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 10px;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  /* Paper size (58mm/80mm) and width are set per-page in a template-level
+     <style> block, driven by the receipt_width setting. */
+}
